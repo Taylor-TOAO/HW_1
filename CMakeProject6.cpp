@@ -30,6 +30,33 @@ double gradient_sigmoid(double z)
 }
 } Problem5_Structure;
 
+vector<double> gradient_weights(double z, double y, vector<double> x)
+{
+	double sig = Problem5_Structure.sigmoid(z);
+	double grad_sig = Problem5_Structure.gradient_sigmoid(z);
+	double scalar = (2 * (sig - y)) * (grad_sig);
+	vector<double> dw;
+	for (int i = 0; i < x.size(); i++)
+	{
+		double resultant = scalar * x[i];
+		dw.push_back(resultant);
+	}
+	return dw;
+
+}
+
+vector<double> update_weights(vector<double> w, vector<double> dw)
+{
+	vector<double> w_i;
+	for (int i = 0; i < w.size(); i++)
+	{
+		double alpha = 0.001;
+		double vector_subtraction = (w[i] - alpha * dw[i]);
+		w_i.push_back(vector_subtraction);
+	}
+	return w_i;
+}
+
 
 int main()
 {
@@ -45,21 +72,41 @@ int main()
 
 	vector<double> w = { 0.0001, 0.0001, 0.0001 };
 	vector<double> x = { 124, 31.89, 20.945 };
-	dot_product(w, x);
+	double z = dot_product(w, x);
 	//cout << "The dot product of vectors w and x is " << dot_product(w, x) << endl;
 	
-	double z = 0.0176835;
-	Problem5_Structure.sigmoid(z);
+	//double z = 0.0176835;
+	//Problem5_Structure.sigmoid(z);
 	//cout << "The solution to sigmoid is " << Problem5_Structure.sigmoid(z) << endl;
-	Problem5_Structure.gradient_sigmoid(z);
-	//cout << "The solution to the gradient of sigmoid is " << Problem5_Structure.gradient_sigmoid(z) << endl;
+	//Problem5_Structure.gradient_sigmoid(z);
+	cout << "The solution to the gradient of sigmoid is " << Problem5_Structure.gradient_sigmoid(z) << endl;
 
 	double y_predict = 0.504421;
 	double y = 1;
 	gradient_cost(y_predict, y);
-	cout << "The rate of change of the cost function is " << gradient_cost(y_predict, y) << endl;
+	//cout << "The rate of change of the cost function is " << gradient_cost(y_predict, y) << endl;
 	
+	vector <double> dw = gradient_weights(z, y, x);
+	cout << "The differential weights in vector form are: [ ";
 
+	for (int i= 0; i < dw.size(); i++)
+	{
+		cout << dw[i] << " ";
+	}
+	cout << "]";
+	cout << endl;
+
+	//cout << gradient_weights(z, y, x) << endl;
+	
+	vector <double> w_i = update_weights(w, dw);
+	cout << "The updated weights in vector form are: [ ";
+
+	for (int i = 0; i < w_i.size(); i++)
+	{
+		cout << w_i[i] << " ";
+	}
+	cout << "]";
+	cout << endl;
 
 	return 0;
 }
