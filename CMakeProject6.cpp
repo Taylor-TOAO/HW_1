@@ -15,6 +15,14 @@ double equation1(float p, float del)
 	return(L_p * p + L_del * del);
 }
 
+/*void gainequation(float K, float K0, float del, float p)
+{
+	int alpha = 1;
+	return(K = K0 + alpha * p*p;
+
+}
+*/
+
 /*float equation2(float p, float del)
 {
 	int K = -1;
@@ -69,28 +77,31 @@ void solveAutopilotEquation(float p, float p0, float del_t)
 		p = p0 + del_t * equation1(p, del);
 		del_t = 0.01;
 		p0 = p;
-		cout << "This is the autopilot solution for iteration " << i << ", p = " << p << endl;
+		//cout << "This is the autopilot solution for iteration " << i << ", p = " << p << endl;
 
 
 	}
 	cout << "The solution for the Autopilot Solution at t = 5 seconds is " << p << endl;
 }
 
-void solveSophisticatedAutopilotEquation(float p, float p0, float del_t)
+void solveSophisticatedAutopilotEquation(float p, float p0, float del_t, float K, float K0, float del)
 {
 	for (double i = 0; i <= 5; i = i + 0.01)
 	{
 
-		int K = -1;
-		double del = -K * p;
+		int alpha = -1;
+		K = K0 + alpha * p0 * p0;
+		//cout << K << endl;
+		del = -K * p;
 		p = p0 + del_t * equation1(p, del);
 		del_t = 0.01;
 		p0 = p;
-		//cout << "This is the autopilot solution for iteration " << i << ", p = " << p << endl;
+		K0 = K;
+		cout << "This is the sophisticated autopilot solution for iteration " << i << ", p = " << p << endl;
 
 
 	}
-	cout << "The solution for the Autopilot Solution at t = 5 seconds is " << p << endl;
+	cout << "The solution for the Sophisticated Autopilot Solution at t = 5 seconds is " << p << endl;
 }
 
 int main()
@@ -101,7 +112,12 @@ int main()
 	//solveRollRateEquation(p, p0, del_t_0);
 	//cout << p;
 
-	solveAutopilotEquation(p, p0, del_t_0);
+	//solveAutopilotEquation(p, p0, del_t_0);
+
+	float K = 0;
+	float K0 = 1;
+	float del = 0;
+	solveSophisticatedAutopilotEquation(p, p0, del_t_0, K, K0, del);
 
 	return 0;
 }
