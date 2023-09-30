@@ -1,13 +1,12 @@
 # ninja log v5
-1	845	7177904734119704	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
-845	989	7177904735233391	CMakeProject6.exe	952d17e743ce26a6
+6	933	7177915831708125	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
+934	1076	7177915832835445	CMakeProject6.exe	f2f1dfb186553d59
 17	910	7177898610342503	CMakeFiles/CMakeProject6.dir/Problem1.cpp.obj	388f9b1bed172d75
 10	210	7177815419981431	CMakeFiles/CMakeProject6.dir/RollRateEquation.cpp.obj	63793811acd794ca
 14	928	7177899173225782	CMakeFiles/CMakeProject6.dir/Problem2.cpp.obj	e978f93043cbe06
 5	822	7177900771772355	CMakeFiles/CMakeProject6.dir/Problem3.cpp.obj	a6e323f89e303ed
-10	809	7177901551403472	CMakeFiles/CMakeProject6.dir/Problem4.cpp.obj	b304def0cef8ed4a
 6	376	7177909098706845	CMakeFiles/CMakeProject6.dir/Problem5.cpp.obj	42be057e3e873319
-3	780	7177909102813055	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
-10	724	7177909332435189	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
-12	1058	7177911038449872	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
-1059	1199	7177911039602913	CMakeProject6.exe	f2f1dfb186553d59
+10	809	7177901551403472	CMakeFiles/CMakeProject6.dir/Problem4.cpp.obj	b304def0cef8ed4a
+8	217	7177917024104924	CMakeFiles/CMakeProject6.dir/Problem6.cpp.obj	fde38cadf1731cae
+4	813	7177917030069043	CMakeFiles/CMakeProject6.dir/CMakeProject6.cpp.obj	9a6b73686b3d347a
+813	970	7177917031317485	CMakeProject6.exe	45e4de021f30472c
