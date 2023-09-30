@@ -1,1 +1,1 @@
-void solveRollRateEquation(float p, float p0, float del_t);
+double solveRollRateEquation(float p, float p0, float del_t);

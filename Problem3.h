@@ -1,1 +1,1 @@
-void solveSophisticatedAutopilotEquation(float p, float p0, float del_t, float K, float K0, float del);
+double solveSophisticatedAutopilotEquation(float p, float p0, float del_t, float K, float K0, float del);

@@ -1,1 +1,1 @@
-void solveAutopilotEquation(float p, float p0, float del_t);
+double solveAutopilotEquation(float p, float p0, float del_t);

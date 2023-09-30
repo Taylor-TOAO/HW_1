@@ -1,7 +1,7 @@
 #include <iostream>
 #include "RollRateEquation.h"
 using namespace std;
-void solveAutopilotEquation(float p, float p0, float del_t)
+double solveAutopilotEquation(float p, float p0, float del_t)
 {
 	for (double i = 0; i <= 5; i = i + 0.01)
 	{
@@ -16,4 +16,5 @@ void solveAutopilotEquation(float p, float p0, float del_t)
 
 	}
 	cout << "The solution for the Autopilot Solution at t = 5 seconds is " << p << endl;
+	return 0;
 }

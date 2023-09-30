@@ -1,14 +1,8 @@
 #include <iostream>
 #include "RollRateEquation.h"
 using namespace std;
-void solveRollRateEquation(float p, float p0, float del_t)
+double solveRollRateEquation(float p, float p0, float del_t)
 {
-	/*double equation1(float p, float del);;
-	{
-		double L_p = -0.8;
-		double L_del = -0.32;
-		return(L_p * p + L_del * del);
-	}*/
 
 	for (double i = 0; i <= 5; i = i + 0.01)
 	{
@@ -42,4 +36,5 @@ void solveRollRateEquation(float p, float p0, float del_t)
 		}
 	}
 	cout << "The solution for the Roll Rate Equation at t = 5 seconds is " << p << endl;
+	return 0;
 }

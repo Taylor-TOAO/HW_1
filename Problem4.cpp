@@ -10,6 +10,6 @@ double dot_product(vector<double> w, vector<double> x)
 	{
 		product += w[i] * x[i];
 	}
-	cout << "The dot product of vectors w and x is " << product << endl;
-	return 0;
+	//cout << "The dot product of vectors w and x is " << product << endl;
+	return product;
 }

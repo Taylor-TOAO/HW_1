@@ -7,21 +7,27 @@
 #include "Problem2.h"
 #include "Problem3.h"
 #include "Problem4.h"
+#include "Problem5.h"
 #include <iostream>
 #include <vector>
+#include <cmath>
 
 using namespace std;
 
-/*double dot_product(vector<double> w, vector<double> x)
+struct {
+double sigmoid(double z)
 {
-	double product = 0;
-	for (int i = 0; i < w.size(); i++)
-	{
-		product += w[i] * x[i];
-	}
-	cout << "The dot product of vectors w and x is " << product << endl;
-	return 0;
-}*/
+	//double result = 1 / (1 + exp(-z));
+	//cout << result << endl;
+	return (1 / (1 + exp(-z)));
+}
+double gradient_sigmoid(double z)
+{
+	double sig = sigmoid(z);
+	return(sig*(1-sig));
+	
+}
+} Problem5_Structure;
 
 
 
@@ -40,6 +46,17 @@ int main()
 	vector<double> w = { 0.0001, 0.0001, 0.0001 };
 	vector<double> x = { 124, 31.89, 20.945 };
 	dot_product(w, x);
+	//cout << "The dot product of vectors w and x is " << dot_product(w, x) << endl;
+	
+	double z = 0.0176835;
+	Problem5_Structure.sigmoid(z);
+	cout << "The solution to sigmoid is " << Problem5_Structure.sigmoid(z) << endl;
+	Problem5_Structure.gradient_sigmoid(z);
+	cout << "The solution to the gradient of sigmoid is " << Problem5_Structure.gradient_sigmoid(z) << endl;
+
+	//cout << gradient_sigmoid << endl;
+
+	//cout << exp(-0.0176835) << endl;
 	
 
 
