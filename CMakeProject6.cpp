@@ -2,107 +2,17 @@
 //
 
 #include "CMakeProject6.h"
+#include "RollRateEquation.h"
+#include "Problem1.h"
+#include "Problem2.h"
+#include "Problem3.h"
 #include <iostream>
 
 using namespace std;
 
 
 
-double equation1(float p, float del)
-{
-	double L_p = -0.8;
-	double L_del = -0.32;
-	return(L_p * p + L_del * del);
-}
 
-/*void gainequation(float K, float K0, float del, float p)
-{
-	int alpha = 1;
-	return(K = K0 + alpha * p*p;
-
-}
-*/
-
-/*float equation2(float p, float del)
-{
-	int K = -1;
-	float L_p = -0.8;
-	float L_del = -0.32;
-	return(L_p * p + L_del*del);
-}*/
-
-void solveRollRateEquation(float p, float p0, float del_t)
-{
-	for (double i = 0; i <= 5; i = i + 0.01)
-	{
-		
-		while (i <= 2)
-		{
-			int del = 1;
-			p = p0 + del_t * equation1(p, del);
-			del_t = 0.01;
-			i = i + 0.01;
-			p0 = p;
-			cout << "This is the roll rate for t < 2 (iteration) " << i << ", p = " << p << endl;
-			if (i > 2)
-			//cout << p;
-			break;
-
-		}
-		
-		while (i <= 5)
-		{
-			//cout << "Start here" << p << endl;
-			int del = 0;
-			del_t = 0.01;
-			p = p0 + del_t * equation1(p, del);
-			i = i + 0.01;
-			p0 = p;
-			cout << "This is the roll rate for t > 2 (iteration) " << i << ", p = " << p << endl;
-			if (i >= 4.99)
-				//cout << p;
-				break;
-		}
-	}
-	cout << "The solution for the Roll Rate Equation at t = 5 seconds is " << p << endl;
-}
-
-void solveAutopilotEquation(float p, float p0, float del_t)
-{
-	for (double i = 0; i <= 5; i = i + 0.01)
-	{
-
-		int K = -1;
-		double del = -K * p;
-		p = p0 + del_t * equation1(p, del);
-		del_t = 0.01;
-		p0 = p;
-		//cout << "This is the autopilot solution for iteration " << i << ", p = " << p << endl;
-
-
-	}
-	cout << "The solution for the Autopilot Solution at t = 5 seconds is " << p << endl;
-}
-
-void solveSophisticatedAutopilotEquation(float p, float p0, float del_t, float K, float K0, float del)
-{
-	for (double i = 0; i <= 5; i = i + 0.01)
-	{
-
-		int alpha = -1;
-		K = K0 + alpha * p0 * p0;
-		//cout << K << endl;
-		del = -K * p;
-		p = p0 + del_t * equation1(p, del);
-		del_t = 0.01;
-		p0 = p;
-		K0 = K;
-		cout << "This is the sophisticated autopilot solution for iteration " << i << ", p = " << p << endl;
-
-
-	}
-	cout << "The solution for the Sophisticated Autopilot Solution at t = 5 seconds is " << p << endl;
-}
 
 int main()
 {

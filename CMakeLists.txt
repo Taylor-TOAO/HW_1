@@ -12,7 +12,7 @@ endif()
 project ("CMakeProject6")
 
 # Add source to this project's executable.
-add_executable (CMakeProject6 "CMakeProject6.cpp" "CMakeProject6.h")
+add_executable (CMakeProject6 "CMakeProject6.cpp" "CMakeProject6.h" "Problem1.h" "Problem1.cpp" "RollRateEquation.h" "RollRateEquation.cpp" "Problem2.h" "Problem2.cpp" "Problem3.h" "Problem3.cpp")
 
 if (CMAKE_VERSION VERSION_GREATER 3.12)
   set_property(TARGET CMakeProject6 PROPERTY CXX_STANDARD 20)
