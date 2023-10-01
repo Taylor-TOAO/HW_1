@@ -2,8 +2,6 @@
 struct {
 	double sigmoid(double z)
 	{
-		//double result = 1 / (1 + exp(-z));
-		//cout << result << endl;
 		return (1 / (1 + exp(-z)));
 	}
 	double gradient_sigmoid(double z)

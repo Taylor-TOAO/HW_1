@@ -1,5 +1,6 @@
-﻿// CMakeProject6.cpp : Defines the entry point for the application.
-//
+﻿//Gilbert Taylor Stokes (951025517), AERSP_424_HW_1
+// CMakeProject6.cpp : Defines the entry point for the application.
+//This is the main file
 
 #include "CMakeProject6.h"
 #include "RollRateEquation.h"
@@ -15,6 +16,7 @@
 
 using namespace std;
 
+//Problem 5 functions
 struct {
 double sigmoid(double z)
 {
@@ -30,6 +32,7 @@ double gradient_sigmoid(double z)
 }
 } Problem5_Structure;
 
+//Problem 7-9 Functions
 vector<double> gradient_weights(double z, double y, vector<double> x)
 {
 	double sig = Problem5_Structure.sigmoid(z);
@@ -61,15 +64,16 @@ vector<double> update_weights(vector<double> w, vector<double> dw, double alpha)
 int main()
 {
 	//Problems 1 - 3
+	//Initial Conditions
 	float p = 0;
 	float p0 = 1;
 	float del_t_0 = 0;
 	float K = 0;
 	float K0 = 1;
 	float del = 0;
-	//solveRollRateEquation(p, p0, del_t_0);
-	//solveAutopilotEquation(p, p0, del_t_0);
-	//solveSophisticatedAutopilotEquation(p, p0, del_t_0, K, K0, del);
+	//solveRollRateEquation(p, p0, del_t_0);//Answer is stable
+	//solveAutopilotEquation(p, p0, del_t_0);//Answer is stable
+	//solveSophisticatedAutopilotEquation(p, p0, del_t_0, K, K0, del);//Answer is stable
 
 	//Problem 4
 	vector<double> w = { 0.0001, 0.0001, 0.0001 };
@@ -123,7 +127,7 @@ int main()
 	double alpha = 0.001;
 
 
-	for (int i = 0; i <= 10000; i++)
+	for (int i = 0; i <= 500; i++)
 	{
 		//M-346 Master
 		vector<double> x1 = { 124, 31.89, 20.945 };
@@ -222,13 +226,13 @@ int main()
 		}
 
 	}
-	cout << "The updated weights  (after 500 iterations) in vector form are:" << endl << "[ ";
+	/*cout << "The updated weights  (after 500 iterations) in vector form are:" << endl << "[ ";
 	for (int k = 0; k < w0_1.size(); k++)
 	{
 		cout << w0_1[k] << " ";
 	}
 	cout << "]";
-	cout << endl;
+	cout << endl;*/
 
 	//Problem 9
 

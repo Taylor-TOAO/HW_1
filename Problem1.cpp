@@ -1,6 +1,7 @@
 #include <iostream>
 #include "RollRateEquation.h"
 using namespace std;
+//solveRollRateEquation similar to Euler Method, i.e., iterative ODE solver
 double solveRollRateEquation(float p, float p0, float del_t)
 {
 
