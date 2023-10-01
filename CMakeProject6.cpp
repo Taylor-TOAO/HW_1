@@ -123,7 +123,7 @@ int main()
 	double alpha = 0.001;
 
 
-	for (int i = 0; i <= 500; i++)
+	for (int i = 0; i <= 10000; i++)
 	{
 		//M-346 Master
 		vector<double> x1 = { 124, 31.89, 20.945 };
@@ -229,6 +229,49 @@ int main()
 	}
 	cout << "]";
 	cout << endl;
+
+	//Problem 9
+
+	//SF-50
+	vector<double> x1 = { 87, 38.67, 6.000 };
+	double z1 = dot_product(w0_1, x1);
+	double y_predictSF_50 = Problem5_Structure.sigmoid(z1);
+	//cout << y_predictSF_50 << endl;
+	if (y_predictSF_50 > 0.5)
+		cout << "The SF-50 is predicted to have a jet engine." << endl;
+	else
+		cout << "The SF-50 is predicted to have a turboprop engine." << endl;
+
+	//208 Caravan
+	vector<double> x2 = { 79, 52.08, 8.000 };
+	double z2 = dot_product(w0_1, x2);
+	double y_predict208 = Problem5_Structure.sigmoid(z2);
+	//cout << y_predict208 << endl;
+	if (y_predict208 > 0.5)
+		cout << "The 208 Caravan is predicted to have a jet engine." << endl;
+	else
+		cout << "The 208 Caravan is predicted to have a turboprop engine." << endl;
+
+	//Aero L-29 Delfin
+	vector<double> x3 = { 92, 33.75, 7.804 };
+	double z3 = dot_product(w0_1, x3);
+	double y_predictL_29 = Problem5_Structure.sigmoid(z3);
+	//cout << y_predictL_29 << endl;
+	if (y_predictL_29 > 0.5)
+		cout << "The L-29 Delfin is predicted to have a jet engine." << endl;
+	else
+		cout << "The L-29 Delfin is predicted to have a turboprop engine." << endl;
+
+	//AT-802U
+	vector<double> x4 = { 91, 59.25, 16.000 };
+	double z4 = dot_product(w0_1, x4);
+	double y_predictAT_802U = Problem5_Structure.sigmoid(z4);
+	//cout << y_predictAT_802U << endl;
+	if (y_predictAT_802U > 0.5)
+		cout << "The AT_802U is predicted to have a jet engine." << endl;
+	else
+		cout << "The AT_802U is predicted to have a turboprop engine." << endl;
+
 
 
 	return 0;
