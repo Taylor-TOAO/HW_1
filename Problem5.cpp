@@ -1,5 +1,5 @@
 #include <cmath>
-struct {
+#include "Problem5.h"
 	double sigmoid(double z)
 	{
 		return (1 / (1 + exp(-z)));
@@ -9,5 +9,4 @@ struct {
 		double sig = sigmoid(z);
 		return(sig * (1 - sig));
 
-	}
-} Problem5_Structure;
+	};

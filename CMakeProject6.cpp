@@ -8,7 +8,6 @@
 #include "Problem2.h"
 #include "Problem3.h"
 #include "Problem4.h"
-#include "Problem5.h"
 #include "Problem6.h"
 #include <iostream>
 #include <vector>
@@ -35,6 +34,8 @@ double gradient_sigmoid(double z)
 //Problem 7-9 Functions
 vector<double> gradient_weights(double z, double y, vector<double> x)
 {
+
+	
 	double sig = Problem5_Structure.sigmoid(z);
 	double grad_sig = Problem5_Structure.gradient_sigmoid(z);
 	double scalar = (2 * (sig - y)) * (grad_sig);
@@ -82,10 +83,7 @@ int main()
 	//cout << "The dot product of vectors w and x is " << dot_product(w, x) << endl;
 	
 	//Problem 5
-	//double z = 0.0176835;
-	//Problem5_Structure.sigmoid(z);
 	//cout << "The solution to sigmoid is " << Problem5_Structure.sigmoid(z) << endl;
-	//Problem5_Structure.gradient_sigmoid(z);
 	//cout << "The solution to the gradient of sigmoid is " << Problem5_Structure.gradient_sigmoid(z) << endl;
 
 	//Problem 6
@@ -96,7 +94,7 @@ int main()
 	
 	//Problem 7
 	
-	/*vector <double> dw = gradient_weights(z, y, x);
+	vector <double> dw = gradient_weights(z, y, x);
 	cout << "The differential weights in vector form are: [ ";
 
 	for (int i= 0; i < dw.size(); i++)
@@ -108,7 +106,7 @@ int main()
 
 	//cout << gradient_weights(z, y, x) << endl;
 	
-	doube alpha = 0.001;
+	double alpha = 0.001;
 	vector <double> w_i = update_weights(w, dw, alpha);
 	cout << "The updated weights in vector form are: [ ";
 
@@ -118,14 +116,14 @@ int main()
 	}
 	cout << "]";
 	cout << endl;
-	*/
+	
 	
 
 	//Problem 8
 	//Initialization
-	vector<double> w0_1 = { 0.0001, 0.0001, 0.0001 };
-	double alpha = 0.001;
-
+	vector<double> w0_1 = {0.0001, 0.0001, 0.0001};
+	//double alpha = 0.001;
+	//vector<double> w_trained = weight_training(w0_1, alpha);
 
 	for (int i = 0; i <= 500; i++)
 	{
@@ -226,13 +224,14 @@ int main()
 		}
 
 	}
-	/*cout << "The updated weights  (after 500 iterations) in vector form are:" << endl << "[ ";
+
+	cout << "The final updated weights (after 500 iterations) in vector form are:" << endl << "[ ";
 	for (int k = 0; k < w0_1.size(); k++)
 	{
 		cout << w0_1[k] << " ";
 	}
 	cout << "]";
-	cout << endl;*/
+	cout << endl <<  endl;
 
 	//Problem 9
 
